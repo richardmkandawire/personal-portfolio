@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Richard Mkandawire | CV</title>
+    <link rel="icon" type="image/png" href="images/profile-icon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --bd: var(--line);
+            --ac: var(--primary);
+            --ac2: var(--primary-strong);
+            --tx: var(--text);
+            --mu: var(--muted);
+            --fd: var(--font-display);
+            --fb: var(--font-body);
+        }
+
+        .cv {
+            max-width: 900px;
+            margin: 2rem auto 3rem;
+            background: var(--card);
+            border: 1px solid var(--bd);
+            border-radius: 1rem;
+            overflow: hidden
+        }
+
+        .cv-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(11, 16, 32, 0.94);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(12px);
+        }
+
+        .cv-nav-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            min-height: 76px;
+        }
+
+        .cv-nav-actions {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+
+        .cv-back-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: .6rem 1rem;
+            border: 1px solid var(--primary);
+            border-radius: 999px;
+            background: rgba(192, 7, 7, 0.12);
+            color: var(--text);
+            font-weight: 700;
+            transition: background .2s ease, transform .2s ease;
+        }
+
+        .cv-back-link:hover,
+        .cv-back-link:focus-visible {
+            background: var(--primary);
+            color: #f50d0d;
+            transform: translateY(-2px);
+        }
+
+        .cv-back-link:focus-visible {
+            outline: 2px solid var(--text);
+            outline-offset: 3px;
+        }
+
+        .cv-print-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: .6rem 1rem;
+            border: 2px solid #dc2626;
+            border-radius: 999px;
+            background: #dc2626;
+            color: #fff;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(220, 38, 38, .25);
+        }
+
+        .cv-print-button:hover,
+        .cv-print-button:focus-visible {
+            transform: none;
+            border-color: #dc2626;
+            background: #dc2626;
+            box-shadow: 0 8px 20px rgba(220, 38, 38, .25);
+        }
+
+        .cv-print-button:focus-visible {
+            outline: 2px solid var(--text);
+            outline-offset: 3px;
+        }
+
+        .top {
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(102, 126, 234, .25), rgba(245, 87, 108, .2));
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap
+        }
+
+        .top h1 {
+            font-family: var(--fd);
+            font-size: 2.8rem;
+            line-height: 1.1
+        }
+
+        .top h1 span {
+            background: var(--grad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+
+        .top p {
+            color: var(--mu)
+        }
+
+        .top img {
+            flex: 0 0 110px;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 20%;
+            border: 3px solid rgba(255, 255, 255, .78);
+            background: #f4f0e6
+        }
+
+        .ct {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .4rem 1.6rem;
+            padding: 1rem 2.5rem;
+            border-bottom: 1px solid var(--bd);
+            font-size: .9rem;
+            color: var(--mu)
+        }
+
+        .body {
+            display: block
+        }
+
+        .body>div {
+            padding: 2rem 2.5rem
+        }
+
+        .cv h2 {
+            font-size: .85rem;
+            text-transform: uppercase;
+            letter-spacing: .15em;
+            color: var(--ac);
+            border-bottom: 2px solid var(--ac);
+            display: inline-block;
+            margin: 0 0 1rem;
+            padding-bottom: .2rem
+        }
+
+        .it {
+            margin-bottom: 1.5rem
+        }
+
+        .it h3 {
+            font-size: 1.1rem
+        }
+
+        .it em {
+            display: block;
+            font-style: normal;
+            color: var(--ac);
+            font-size: .85rem;
+            margin-bottom: .3rem
+        }
+
+        .it p,
+        .it li {
+            color: var(--mu);
+            font-size: .95rem
+        }
+
+        .it ul {
+            padding-left: 1.1rem
+        }
+
+        .skills h3 {
+            margin: 1rem 0 .25rem;
+            font-size: 1rem
+        }
+
+        .skills ul,
+        .main-content>ul {
+            margin-top: .25rem;
+            margin-bottom: 1rem
+        }
+
+        .references {
+            margin: .5rem 0 0;
+        }
+
+        .inline-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .2rem .65rem;
+            list-style: none;
+            padding-left: 0 !important;
+        }
+
+        .inline-list li:not(:last-child)::after {
+            content: "·";
+            margin-left: .65rem;
+            color: var(--ac);
+        }
+
+        .bar {
+            text-align: center;
+            margin-top: 2rem
+        }
+
+        .bar p {
+            margin: .75rem 1rem 0;
+            color: var(--mu)
+        }
+
+        .bar+.cv {
+            margin-top: 1.5rem
+        }
+
+        @media(max-width:700px) {
+            .top h1 {
+                font-size: 2.1rem
+            }
+
+            .cv-nav-wrap {
+                min-height: 68px;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding-block: .5rem;
+            }
+
+            .cv-nav .logo {
+                font-size: 1.15rem;
+            }
+
+            .cv-back-link {
+                padding-inline: .8rem;
+                font-size: .9rem;
+            }
+
+            .cv-nav-actions {
+                gap: .5rem;
+            }
+
+            .cv-print-button {
+                padding-inline: .8rem;
+                font-size: .9rem;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 9mm;
+            }
+
+            .cv-nav,
+            .bar,
+            footer {
+                display: none
+            }
+
+            body {
+                background: #fff;
+                color: #000;
+                line-height: 1.4
+            }
+
+            .cv {
+                max-width: none;
+                margin: 0;
+                border: 0;
+                background: #fff;
+                border-radius: 0;
+                font-size: 10pt;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact
+            }
+
+            .top {
+                padding: 1.5rem 2rem;
+                background: #eef
+            }
+
+            .top img {
+                flex: 0 0 90px;
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .body>div {
+                padding: 1rem 1.5rem;
+            }
+
+            .ct {
+                padding: .65rem 1.5rem;
+                gap: .25rem 1rem;
+            }
+
+            .it {
+                margin-bottom: .75rem;
+            }
+
+            .it p {
+                margin: .3rem 0;
+            }
+
+            .it ul,
+            .main-content>ul {
+                margin-top: .25rem;
+                margin-bottom: .4rem;
+            }
+
+            .cv h2 {
+                margin-bottom: .55rem;
+            }
+
+            .top h1 span {
+                color: #c0392b;
+                -webkit-text-fill-color: #c0392b;
+                background: none
+            }
+
+            .top p,
+            .ct,
+            .it p,
+            .it li {
+                color: #333
+            }
+
+            .it,
+            .cv h2 {
+                break-inside: avoid;
+            }
+
+            .cv h2 {
+                color: #9c2c2c;
+                border-color: #9c2c2c;
+            }
+
+            .it h3 {
+                color: #111;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="cv-nav" aria-label="CV navigation">
+        <div class="wrap cv-nav-wrap">
+            <a class="logo" href="index.html"><img src="images/profile.jpg" alt="">Portfolio</a>
+            <div class="cv-nav-actions">
+                <button class="cv-print-button" type="button" onclick="window.print()">Print / Save as PDF</button>
+                <a class="cv-back-link" href="index.html">&larr; Back to portfolio</a>
+            </div>
+        </div>
+    </nav>
+    <div class="bar">
+        <p>On phones, use your device's print or share options to save or share the CV as a PDF.</p>
+    </div>
+    <main class="cv">
+        <header class="top"><img src="images/profile.jpg" alt="Richard Mkandawire">
+            <div>
+                <h1>Richard <span>Mkandawire</span></h1>
+                <p>Computer Science Student | Aspiring Software Developer</p>
+            </div>
+        </header>
+        <div class="ct">
+            <span>Zomba, Malawi</span>
+            <span>+265 993 840 839</span>
+            <a href="mailto:richardntchindimkandawire@gmail.com">richardntchindimkandawire@gmail.com</a>
+            <a href="https://github.com/richardmkandawire">github.com/richardmkandawire</a>
+        </div>
+        <div class="body">
+            <div class="main-content">
+                <h2>1. Professional Profile</h2>
+                <div class="it">
+                    <p>A motivated and enthusiastic Computer Science student at DMI St. John The Baptist University,
+                        currently pursuing a Bachelor's Degree in Computer Science. Has a strong interest in software
+                        development, cybersecurity, web technologies and graphic design.</p>
+                    <p>Possesses practical technical knowledge gained through academic assignments and personal
+                        software development projects, with exposure to programming, database management, web
+                        development and user interface design. Demonstrates creativity, analytical thinking,
+                        problem-solving abilities and a strong willingness to learn.</p>
+                    <p>Seeking an internship or industrial attachment opportunity to gain practical industry
+                        experience, strengthen technical competencies and contribute positively to an organization's
+                        technology-driven projects.</p>
+                </div>
+
+                <h2>2. Career Objective</h2>
+                <div class="it">
+                    <p>To secure an internship or industrial attachment opportunity in the information technology
+                        field where I can apply my academic knowledge, develop practical technical skills, gain
+                        professional experience and contribute to the development of effective technology solutions.</p>
+                </div>
+
+                <h2>3. Education</h2>
+                <div class="it">
+                    <h3>DMI St. John The Baptist University</h3>
+                    <em>Bachelor's Degree in Computer Science | 2024 – Present</em>
+                    <p>Relevant areas of study:</p>
+                    <ul>
+                        <li>Programming and Software Development</li>
+                        <li>Database Management Systems</li>
+                        <li>Computer Networks</li>
+                        <li>Cybersecurity and Information Security</li>
+                        <li>Web Development</li>
+                        <li>Systems Analysis and Design</li>
+                    </ul>
+                </div>
+
+                <div class="it">
+                    <h3>Vakusi Model High School</h3>
+                    <em>General Studies | MSCE | 2 years</em>
+                    <p>Completed secondary education with a broad academic foundation in general studies, preparing for
+                        continued learning in science and technology-related disciplines.</p>
+                </div>
+
+                <div class="it">
+                    <h3>Domasi Demonstration Secondary School</h3>
+                    <em>General Studies | MSCE | 4 years</em>
+                    <p>Developed strong academic fundamentals and study discipline through a sustained secondary school
+                        programme, supporting my later interest in computer science and technology.</p>
+                </div>
+
+                <h2>4. Technical Skills</h2>
+                <div class="it skills">
+                    <h3>Programming and Web Development</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>HTML5 and CSS3</li>
+                        <li>Django and Django REST Framework</li>
+                        <li>React</li>
+                    </ul>
+                    <h3>Database Management</h3>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>SQLite</li>
+                        <li>SQL</li>
+                    </ul>
+                    <h3>Cybersecurity</h3>
+                    <ul>
+                        <li>Authentication and authorization</li>
+                        <li>Role-Based Access Control (RBAC)</li>
+                        <li>Information security principles</li>
+                        <li>Data protection and secure communication concepts</li>
+                    </ul>
+                    <h3>Graphic Design</h3>
+                    <ul>
+                        <li>Adobe Photoshop</li>
+                        <li>Logo and brand identity design</li>
+                        <li>Digital graphics and promotional materials</li>
+                    </ul>
+                    <h3>Development Tools</h3>
+                    <ul>
+                        <li>Visual Studio Code</li>
+                        <li>Git and GitHub</li>
+                        <li>Android Studio</li>
+                    </ul>
+                </div>
+
+                <h2>5. Academic and Personal Projects</h2>
+                <div class="it project">
+                    <h3>Secure Digital Communication Platform for Public Institutions</h3>
+                    <p>A software development project focused on providing secure communication and document exchange
+                        among authorized personnel in public institutions.</p>
+                    <ul>
+                        <li>Developing the frontend using React.</li>
+                        <li>Developing backend services using Python and Django REST Framework.</li>
+                        <li>Using MySQL for database management.</li>
+                        <li>Designing authentication and role-based access control functionality.</li>
+                        <li>Exploring secure file sharing, encryption and activity logging.</li>
+                    </ul>
+                </div>
+                <div class="it project">
+                    <h3>GUI Email Sender Application</h3>
+                    <p>A Python-based desktop application designed to facilitate email communication through a
+                        graphical user interface.</p>
+                    <ul>
+                        <li>Designed the graphical interface using Python Tkinter.</li>
+                        <li>Integrated SMTP functionality for sending emails.</li>
+                        <li>Implemented user-friendly application controls.</li>
+                    </ul>
+                </div>
+                <div class="it project">
+                    <h3>Inventory Control System</h3>
+                    <p>A software project focused on improving inventory record management and stock monitoring.</p>
+                    <ul>
+                        <li>Applied database management concepts.</li>
+                        <li>Worked on inventory record organization.</li>
+                        <li>Applied programming and system development principles.</li>
+                    </ul>
+                </div>
+                <div class="it project">
+                    <h3>Student Management System</h3>
+                    <p>A software project designed to facilitate management of student information and academic
+                        records.</p>
+                    <ul>
+                        <li>Worked with database design concepts.</li>
+                        <li>Applied programming and data management principles.</li>
+                        <li>Explored efficient organization of student records.</li>
+                    </ul>
+                </div>
+                <div class="it project">
+                    <h3>Personal Portfolio Website</h3>
+                    <p>A web development project intended to showcase academic achievements, technical skills and
+                        software development projects.</p>
+                    <ul>
+                        <li>Developing the website using HTML and CSS.</li>
+                        <li>Applying responsive design principles.</li>
+                        <li>Organizing personal and professional information.</li>
+                    </ul>
+                </div>
+
+                <h2>6. Entrepreneurial and Creative Experience</h2>
+                <div class="it">
+                    <h3>Nthaka Pulse – Branding and Innovation Project</h3>
+                    <ul>
+                        <li>Participated in developing a business brand focused on technology and agricultural
+                            innovation.</li>
+                        <li>Worked on logo design and visual identity.</li>
+                        <li>Explored technology-driven approaches to agricultural challenges.</li>
+                        <li>Created promotional and branding concepts.</li>
+                    </ul>
+                </div>
+
+                <h2>7. Personal Attributes</h2>
+                <ul>
+                    <li>Strong problem-solving and analytical skills</li>
+                    <li>Good communication and interpersonal abilities</li>
+                    <li>Works independently and collaboratively</li>
+                    <li>Creativity and innovation</li>
+                    <li>Adaptability and willingness to learn</li>
+                    <li>Good time management</li>
+                    <li>Attention to detail</li>
+                </ul>
+
+                <h2>8. Languages</h2>
+                <ul>
+                    <li>English</li>
+                    <li>Chichewa</li>
+                </ul>
+
+                <h2>9. Career Interests</h2>
+                <ul class="inline-list">
+                    <li>Software Development</li>
+                    <li>Web Application Development</li>
+                    <li>Cybersecurity</li>
+                    <li>IT Support and Systems Administration</li>
+                    <li>Database Management</li>
+                </ul>
+
+                <h2>10. References</h2>
+                <div class="it reference">
+                    <h3>Richard Kachipinda</h3>
+                    <p><strong>Position:</strong> Teacher</p>
+                    <p><strong>Organization:</strong> Vakusi High Model High School</p>
+                    <p><strong>Phone:</strong> <a href="tel:+265998623359">+265 998 623 359</a></p>
+                </div>
+                <div class="it reference">
+                    <h3>Mr Phillimon</h3>
+                    <p><strong>Position:</strong> Lecturer</p>
+                    <p><strong>Organization:</strong> DMI St. John The Baptist University</p>
+                    <p><strong>Phone:</strong> <a href="tel:+265884658477">+265 884 658 477</a></p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
