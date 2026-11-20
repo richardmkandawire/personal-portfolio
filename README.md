@@ -137,10 +137,10 @@ GitHub Pages URL: https://richardmkandawire.github.io/personal-portfolio/
    - Technologies: Web development, Database
    - GitHub: [Repository](https://github.com/DMI-BSC-15/student-management-system)
 
-5. Dream Gadget Store
-   - An e-commerce website for browsing and purchasing gadgets with a user-friendly experience.
-   - Technologies: HTML, CSS, Python
-   - GitHub: [Repository](https://github.com/richardmkandawire/Dream-Gadget-Store)
+5. Dream Gadgets Store
+   - A full-stack e-commerce platform for discovering, comparing and purchasing gadgets, with carts, customer accounts, wishlists, mobile-money checkout and order management.
+   - Technologies: React, Vite, JavaScript, Python, Django REST Framework, SQLite
+   - GitHub: [Repository](https://github.com/richardmkandawire/Dream-Gadgets-Store)
 
 ## Personal Brand and Assets
 
